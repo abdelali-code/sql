@@ -1,0 +1,21 @@
+
+-- 5.1 SELECT Name FROM pieces;
+
+-- 5.2 SELECT * FROM `providers`;
+ 
+-- 5.3 SELECT pieces.Code, AVG(provides.Price) FROM pieces JOIN provides ON (pieces.Code = provides.Piece) GROUP BY provides.Piece;
+
+-- 5.4 SELECT providers.Name from providers WHERE Code IN (SELECT provides.Provider FROM `provides` WHERE Piece = 1);
+
+-- 5.5 SELECT Name FROM `pieces` WHERE pieces.Code IN (SELECT Piece FROM `provides` where Provider = 'HAL');
+
+
+-- 5.6 SELECT p1.Price,pieces.Name, providers.Name from provides p1, pieces, providers where pieces.Code = p1.Piece and p1.Provider = providers.Code AND p1.price >= all (SELECT Price FROM provides p2 WHERE p2.Piece = p1.Piece) GROUP BY Piece;
+
+-- 5.7 INSERT INTO provides(Piece, Provider, Price) VALUES(1, "TNBC", 7);
+
+-- 5.8 UPDATE provides SET Price = Price + 1;
+
+-- 5.9 DELETE FROM provides WHERE provides.Provider = 'RBT' AND provides.Piece = 4;
+
+-- 5.10 Mettre à jour la base de données pour refléter le fait que "Susan Calvin Corp. (code "RBT") ne fournira pas de boulons (code 4).

@@ -1,0 +1,46 @@
+-- 2.1 SELECT LastName FROM employees;
+
+-- 2.2 SELECT DISTINCT LastName FROM employees;
+
+-- 2.3 SELECT * FROM `employees` WHERE LastName = 'Smith';
+
+-- 2.4 SELECT * FROM `employees` WHERE LastName = 'Smith' or LastName = 'Doe';
+
+-- 2.5 SELECT * FROM `employees` WHERE Department = 14;
+
+-- 2.6 SELECT * FROM `employees` WHERE Department = 37 or Department = 77;
+
+-- 2.7 SELECT * FROM `employees` WHERE LastName LIKE 'S%';
+
+-- 2.8 SELECT SUM(Budget) from departments;
+
+-- 2.9 SELECT COUNT(LastName), Department FROM employees e1, departments WHERE e1.Department = departments.Code GROUP BY Department;
+
+
+-- 2.10 SELECT e.*, d.* FROM employees e, departments d WHERE e.Department = d.Code;
+
+-- 2.11 SELECT LastName, employees.Name, departments.Budget FROM employees, departments where Department = code
+
+
+-- 2.12 SELECT LastName, e.Name FROM employees e, departments WHERE departments.Budget > 60000 and Department = departments.Code;
+
+-- 2.13 SELECT Name FROM `departments` where departments.Budget > (SELECT AVG(Budget) FROM departments);
+
+-- 2.14 SELECT d.Name FROM departments d JOIN employees e ON e.Department = d.Code GROUP BY d.Name HAVING COUNT(e.SSN) > 2;
+
+-- 2.15 SELECT Name, LastName FROM `employees` WHERE Department = (SELECT B.Code FROM (SELECT * from departments ORDER BY departments.Budget LIMIT 2) B ORDER BY B.Budget DESC LIMIT 1)
+
+-- 2.16 
+         INSERT INTO employees (SSN, Name, LastName, Department) VALUES (847219811, 'Mary', 'Moore', 11)
+         Insert into departments (Code, Name, Budget) VALUES (11, 'Quality assurance', 40000)
+
+
+-- 2.17   UPDATE `departments` SET Budget = Budget * 0.9
+
+
+-- 2.18 UPDATE employees SET employees.Department=14 WHERE employees.Department=77;
+
+-- 2.19 DELETE FROM `employees` WHERE Department=14;
+
+-- 2.20 DELETE FROM employees where SSN in (SELECT employees.SSN from employees JOIN departments ON(Department = departments.Code) where departments.Budget >= 60000);
+-- 2.21 DROP TABLE IF EXISTS employees;

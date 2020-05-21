@@ -1,0 +1,22 @@
+-- 4.1 SELECT Title FROM movies;
+
+-- 4.2 SELECT DISTINCT Rating FROM movies;
+
+-- 4.3 SELECT Code, Title FROM `movies` WHERE Rating IS NULL;
+
+-- 4.4 SELECT Code, Name FROM `movietheaters` WHERE Movie IS NULL;
+
+-- 4.5 SELECT * FROM `movietheaters` WHERE Movie IS NOT NULL;
+
+
+-- 4.6 SELECT * FROM movies JOIN movietheaters ON (movies.Code = movietheaters.Movie) WHERE movietheaters.Movie IS NOT NULL;
+
+
+-- 4.7 SELECT Code FROM `movies` WHERE Code NOT IN (SELECT Movie FROM `movietheaters` WHERE Movie IS NOT NULL)
+
+-- 4.8 INSERT INTO movies VALUES(9, "One, Two, three", 
+
+
+-- 4.9 UPDATE movies SET Rating = 'G' WHERE Rating IS NULL;
+
+-- 4.10 DELETE FROM movietheaters WHERE Movie IN (SELECT movies.Code FROM movies WHERE Rating = "NC-17");

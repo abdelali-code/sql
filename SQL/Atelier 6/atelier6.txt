@@ -1,0 +1,2 @@
+-- 6.1 SELECT scientists.Name as scientits, projects.Name as projects, projects.Hours FROM scientists, projects, assignedto WHERE scientists.SSN = assignedto.Scientist and assignedto.Project = projects.Code ORDER BY projects.Name, scientists.Name
+-- 6.2 SELECT projects.Name FROM projects WHERE projects.Code NOT IN (SELECT Project FROM assignedto)
